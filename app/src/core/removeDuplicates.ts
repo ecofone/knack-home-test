@@ -1,5 +1,9 @@
 // Remove duplicated objects in a array of objects provided based on the content of "key" parameter provided
-export const removeDuplicates = function (list: any[], key: string) {
+export const removeDuplicates = function (
+  list: any[],
+  key: string,
+  verbose = true
+) {
   const cleanList = [];
   const set = new Set();
   for (const element of list) {
@@ -8,10 +12,12 @@ export const removeDuplicates = function (list: any[], key: string) {
       set.add(element[key]);
     }
   }
-  console.info(
-    `Removed ${
-      list.length - cleanList.length
-    } duplicated elements based on key field: ${key}`
-  );
+  if (verbose) {
+    console.info(
+      `Removed ${
+        list.length - cleanList.length
+      } duplicated elements based on key field: ${key}`
+    );
+  }
   return cleanList;
 };
