@@ -7,12 +7,16 @@
 
 import { readDBFromFile, writFileFromDB } from "./utilities/filesUtilities";
 import { sanitizeDB } from "./core/sanitizeDB";
+import { config } from "./config";
 
 const app = async () => {
   console.info("0. Starting script...");
 
   // Read the File with the data
-  const data = await readDBFromFile("../mock_application_work.json");
+  const data = await readDBFromFile(config.inputFile);
+  if (!data) {
+    process.exit(1); // We exit with error in case the file could not be read
+  }
   console.info("1. DB read from file!");
 
   // Remove Field duplicates in Object
@@ -20,7 +24,7 @@ const app = async () => {
   console.info("2. DB Sanitized!");
 
   // write sanitized DB to a new file
-  await writFileFromDB("../mock_application_output.json", data);
+  await writFileFromDB(config.outputFile, data);
   console.info("3. DB Exported to file!");
 };
 
