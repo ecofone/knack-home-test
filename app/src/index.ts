@@ -5,11 +5,8 @@
  * 3) Write the result in the output file
  */
 
-const {
-  readDBFromFile,
-  writFileFromDB,
-} = require("./utilities/filesUtilities");
-const { sanitizeDB } = require("./core/sanitizeDB");
+import { readDBFromFile, writFileFromDB } from "./utilities/filesUtilities";
+import { sanitizeDB } from "./core/sanitizeDB";
 
 const app = async () => {
   console.info("0. Starting script...");
