@@ -1,4 +1,8 @@
-// Remove duplicated objects in a array of objects provided based on the content of "key" parameter provided
+/*
+ * Remove duplicated objects in an array of objects (list) using parameter "key" as primary key for the comparison
+ * Duplicates will be removed and put in a clean array.
+ * The input list is not changed
+ */
 export const removeDuplicates = function (
   list: any[],
   key: string,

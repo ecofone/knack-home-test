@@ -1,3 +1,10 @@
+/*
+ * This is the root app file which basically perform three steps:
+ * 1) Read the file with the Mock Knack Application Schema data,
+ * 2) Call the root logic which will sanitize the mock data (for this case only removes duplicates)
+ * 3) Write the result in the output file
+ */
+
 const {
   readDBFromFile,
   writFileFromDB,

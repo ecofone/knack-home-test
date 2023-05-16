@@ -1,3 +1,9 @@
+/*
+ * This is the root logic to sanitize the Mock Knack Application Schema data.
+ * It iterate over the versions array and pass down the object and scenes objects to the specific routines which review them
+ * Since objects are passed as reference in JS, the changes are done directly in the original object
+ */
+
 const { removeDuplicatedFields } = require("./removeDuplicatedFields");
 const { removeDuplicatedViews } = require("./removeDuplicatedViews");
 
