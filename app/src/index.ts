@@ -7,7 +7,7 @@
 
 import { readDBFromFile, writFileFromDB } from "./utilities/filesUtilities";
 import { sanitizeDB } from "./core/sanitizeDB";
-const config = require("../config.js");
+const { config } = require("../config.js");
 
 const app = async () => {
   console.info("0. Starting script...");
